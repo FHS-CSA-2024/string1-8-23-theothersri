@@ -95,6 +95,7 @@ public class String1
      */
     public String extraEnd(String str) {
         String end = str.substring(str.length()-2);
+        //This should not concat to the original string, it should just make a copy of the last 2 characters 2 times
         String strEnd = str+end+end+end;
         return strEnd;
     }
@@ -182,6 +183,7 @@ public class String1
      */
     public String middleThree(String str) {
         if (str.length()%2 ==1);{
+            //This is only returning 2 characters................
             return str.substring(str.length()/2-1, str.length()/2+1);
         }
         
@@ -245,6 +247,8 @@ public class String1
      * conCat("abc", "") â†’ "abc"
      */
     public String conCat(String a, String b) {
+
+        //This will give an index out of bounds error if b is an empty string
         if(a.substring(a.length()-1).equals(b.substring(0,1))){
             return a+b.substring(1);
         }
@@ -264,6 +268,8 @@ public class String1
      *minCat("java", "Hello") â†’ "javaello"
      */
     public String minCat(String a, String b) {
+        //This only returns the last 2 characters of a and then b. 
+        //It should shorten either string so that they are the same length.
         return a.substring(a.length()-2)+b;
     }
 
@@ -275,6 +281,7 @@ public class String1
      * withoutX("Hxix") â†’ "Hxi"
      */
     public String withoutX(String str) {
+        //might want to use indexOf and then do something similar to activty 4 from the lab.
         if(str.substring(str.length()-1).equals("x")&& str.substring(0,1).equals("x"))
         {
             return str.substring(1,str.length()-1);
